@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import axios from 'axios';
 
 export const userSlice = createSlice({
@@ -6,7 +7,7 @@ export const userSlice = createSlice({
     initialState:{
         responseData:{}
     },
-    reducecers:{
+    reducers:{
         setResponseData: (state,action) =>{
             state.responseData = action.payload;
         },
@@ -34,6 +35,6 @@ export const login = (user, password) => (dispatch)=>{
     .catch((error) => console.log(error));
 }
 
-export const removeData=()=>(dispatch){
+export const removeData=()=>(dispatch)=>{
     dispatch(clearState(false));
 }
