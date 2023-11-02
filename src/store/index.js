@@ -5,6 +5,6 @@ import user from "./slices/login";
 
 export default configureStore({
   reducer: {
-    user,
+    user
   },
 });

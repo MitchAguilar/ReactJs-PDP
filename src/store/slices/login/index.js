@@ -24,7 +24,7 @@ export default userSlice.reducer;
 export const login = (user, password) => (dispatch)=>{
     const api=process.env.REACT_APP_API_URL;
     const endpoint=process.env.REACT_APP_LOGIN;
-    axios
+    /*axios
     .post(`${api}${endpoint}`,{
         user: user,
         pass: password
@@ -32,7 +32,16 @@ export const login = (user, password) => (dispatch)=>{
     .then((response) => {//201 OK
       dispatch(setResponseData(response.data));
     })
+    .catch((error) => console.log(error));*/
+    axios
+    .get('https://jsonplaceholder.typicode.com/todos/1')
+    .then((response) => {//201 OK
+        console.log(response.data);
+      dispatch(setResponseData(response.data));
+    })
     .catch((error) => console.log(error));
+
+
 }
 
 export const removeData=()=>(dispatch)=>{
