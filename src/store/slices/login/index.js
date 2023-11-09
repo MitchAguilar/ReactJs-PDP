@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import axios from 'axios';
+import Service from '../../../Services/Service';
 
 export const userSlice = createSlice({
     name:'user',
@@ -22,6 +22,8 @@ export const {clearState} = userSlice.actions;
 export default userSlice.reducer;
 
 export const login = (user, password) => (dispatch)=>{
+    const apiGet = new Service();
+    
     const api=process.env.REACT_APP_API_URL;
     const endpoint=process.env.REACT_APP_LOGIN;
     /*axios
@@ -33,14 +35,15 @@ export const login = (user, password) => (dispatch)=>{
       dispatch(setResponseData(response.data));
     })
     .catch((error) => console.log(error));*/
-    axios
-    .get('https://jsonplaceholder.typicode.com/todos/1')
-    .then((response) => {//201 OK
-        console.log(response.data);
-      dispatch(setResponseData(response.data));
-    })
-    .catch((error) => console.log(error));
-
+    //dispatch(setResponseData(response.data));
+    apiGet
+        .ServiceGet('https://jsonplaceholder.typicode.com/todos/1','')
+        .then((respuesta) => {
+            dispatch(setResponseData(respuesta))
+        })
+        .catch((res)=>{
+            console.error('respuesta error',res);
+        })
 
 }
 
