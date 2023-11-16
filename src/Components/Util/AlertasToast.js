@@ -1,6 +1,6 @@
 import Swal from 'sweetalert2';
 
-export const AlertasToast=(titulo, texto, tipo, tiempo)=>{
+export const AlertasToast = (titulo, texto, tipo, tiempo) => {
     const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
@@ -18,4 +18,6 @@ export const AlertasToast=(titulo, texto, tipo, tiempo)=>{
         title: titulo,
         text: texto
       })
+
 };
+

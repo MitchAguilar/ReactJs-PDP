@@ -1,0 +1,46 @@
+.logoMP {
+    width: 15%;
+}
+
+
+.card-userdata {
+    border: 0px !important;
+}
+
+.grayc {
+    color: var(--colmedicaTerciario);
+}
+
+.lineSeparate {
+    width: 100%;
+    border: 1px solid var(--colmedicaPrimary);
+    opacity: 1;
+}
+
+.cardM {
+    cursor: pointer;
+}
+
+.cardM:hover {
+    border-color: var(--colmedicaPrimary);
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+}
+
+.gradient-custom-2 {
+    background-color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+    .gradient-form {
+        background-color: white;
+        height: 100vh !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
+}

@@ -1,16 +1,17 @@
-import { useEffect, useState } from "react";
 import "./css/App.css";
-import colmedica from "./assets/descarga.png";
+// ROUTER
+import { BrowserRouter } from "react-router-dom";
+import { RouterConfig } from "./navigation/RouterConfig";
 import { Provider } from "react-redux";
 import store from "./store";
-import Login from "./login";
 
 function App() {
-  
   return (
     <>
       <Provider store={store}>
-        <Login></Login>
+        <BrowserRouter basename={process.env.REACT_APP_PUBLIC_URL}>
+          <RouterConfig />
+        </BrowserRouter>
       </Provider>
     </>
   );

@@ -1,43 +1,567 @@
-.App {
-  text-align: center;
-}
-.red{
-color: red;
-}
-.black{
-color: black;
-}
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+html,
+body {
+    height: 100%;
+    font-family: Helvetica, sans-serif;
+    line-height: 20px !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1,
+h2,
+h3,
+h4,
+p {
+    font-family: Helvetica, sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.bodyLogin {
+    height: 100vh !important;
+    overflow-x: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+@supports ((-webkit-hyphens:auto) or (hyphens:auto)) {
+    #Justificado {
+        hyphens: auto;
+        word-wrap: break-word;
+        word-break: break-word;
+        text-align: justify;
+    }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.JustificarTexto {
+    text-align: justify;
+}
+
+.overscrollx {
+    width: calc(100% - 3px);
+    overflow: auto;
+}
+
+.Enlaces {
+    text-decoration: underline;
+}
+
+.none {
+    visibility: hidden;
+}
+
+.contenedorPrincipal {
+    max-width: 90% !important;
+    margin-left: calc(3.4% + 64px) !important;
+}
+
+.gracyColmedica {
+    color: var(--colmedicaTerciario);
+}
+
+.visible {
+    visibility: visible;
+}
+
+.ColmedicaBlu {
+    color: var(--colmedicaPrimary);
+}
+
+.ColmedicaBluSecondary {
+    color: var(--colmedicaSecondary);
+}
+
+.footerTables {
+    font-weight: bold;
+    color: var(--colmedicaPrimary) !important;
+}
+
+.ColmedicaBluBg {
+    background-color: var(--colmedicaPrimary);
+}
+
+.ColmedicaBluSecondaryBg {
+    background-color: var(--colmedicaSecondary);
+}
+
+.overColmedica:hover {
+    color: var(--colmedicaPrimary);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.logOut-icon {
+    float: right;
+    position: relative;
+    margin: 0 0 0 5px;
+    height: 20px;
+    width: 20px;
+    display: block;
+}
+
+.White {
+    color: var(--colmedicaColorTextoPrimario);
+}
+
+.btn-ColmedicaPrimary {
+    color: var(--colmedicaColorTextoPrimario);
+    background-color: var(--colmedicaPrimary) !important;
+    border: 1px solid var(--colmedicaPrimary) !important;
+}
+
+.mrnulo {
+    margin-right: 0px !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.btn-ColmedicaPrimary:focus-visible {
+    color: var(--colmedicaColorTextoPrimario);
+    background-color: var(--colmedicaPrimary) !important;
+    border: 1px solid var(--colmedicaPrimary) !important;
+    outline-color: var(--colmedicaPrimary) !important;
+}
+
+.btn-ColmedicaPrimary:hover {
+    color: var(--colmedicaColorTextoPrimario);
+    border: 1px solid var(--colmedicaSecondary) !important;
+    background-color: var(--colmedicaSecondary) !important;
+    outline-color: var(--colmedicaSecondary) !important;
+}
+.btn-ColmedicaPrimary:focus {
+    color: var(--colmedicaColorTextoPrimario);
+    border: 1px solid var(--colmedicaSecondary) !important;
+    background-color: var(--colmedicaSecondary) !important;
+    outline-color: var(--colmedicaSecondary) !important;
+}
+.cent {
+    text-align: center;
+}
+
+.btn-ColmedicaSecondary {
+    background-color: var(--colmedicaColorTextoPrimario) !important;
+    color: var(--colmedicaPrimary) !important;
+    border: 1px solid var(--colmedicaPrimary) !important;
+}
+
+.btn-ColmedicaSecondary:hover {
+    color: var(--colmedicaSecondary) !important;
+    border: 1px solid var(--colmedicaSecondary) !important;
+}
+
+.form-check-input:checked {
+    background-color: var(--colmedicaSecondary) !important;
+    border-color: var(--colmedicaSecondary) !important;
+}
+
+.form-check-input:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+
+.btn-Base {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    margin: 1rem 0rem 1rem 1rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    padding: 0.2rem 2.5rem 0.2rem 2.5rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.padre {
+    display: table;
+}
+
+.hijo {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.divPadre {
+    height: 100%;
+    position: relative;
+}
+
+.divHijo {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.botonesInferiores {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    /* background-color: var(--colmedicaColorTextoPrimario); */
+    background-clip: border-box;
+    /* border: 1px solid rgba(0,0,0,.125); */
+    border-radius: 0.25rem;
+}
+
+.tablasSpacing {
+    margin-left: 0.5rem;
+}
+
+@media print {
+    .printer * {
+        display: none !important;
+    }
+}
+
+.form-floating>label {
+    top: -10px !important;
+    font-weight: normal !important;
+    /*left: 20px;*/
+    color: var(--colmedicaTerciario) !important;
+    font-size: 12px;
+}
+
+.form-floating>label:hover {
+    top: -10px !important;
+    font-weight: normal !important;
+    /*left: 20px;*/
+    color: var(--colmedicaPrimary) !important;
+    font-size: 12px;
+}
+
+.form-floating input:focus+label {
+    color: var(--colmedicaPrimary) !important;
+}
+
+.form-floating input:hover+label {
+    color: var(--colmedicaPrimary) !important;
+}
+
+.form-floating input[type="text"]:disabled+label {
+    color: var(--colmedicaPrimary) !important;
+}
+
+.hoverCerrarSesion:hover {
+    color: var(--colmedicaPrimary) !important;
+}
+
+.hoverCerrarSesion>.logOut-icon:hover {
+    float: right;
+    position: relative;
+    margin: 0 0 0 5px;
+    height: 20px;
+    width: 20px;
+    background-size: 20px;
+    display: block;
+}
+
+.ingresar-icon {
+    position: fixed;
+    margin-left: 10px;
+    height: 28px;
+    width: 28px;
+    display: inline-block;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ingresar-icon-blue {
+    position: fixed;
+    margin-left: 10px;
+    height: 28px;
+    width: 28px;
+    display: inline-block;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+.form-floating>.form-control:focus~label {
+    color: var(--colmedicaPrimary) !important;
+}
+
+.form-floating input:focus {
+    border: solid 1px var(--colmedicaPrimary) !important;
+    box-shadow: none !important;
+}
+
+.interlineadoCajas {
+    line-height: 6px;
+}
+
+.CajasFondo {
+    background-color: #F6F8FC;
+}
+
+input[type="text"]:disabled {
+    background: #F2F2F2 !important;
+    color: var(--colmedicaTerciario) !important;
+}
+
+.form-floating input {
+    background: var(--colmedicaColorTextoPrimario) !important;
+    /*border: solid 1px var(--colmedicaPrimary);*/
+    border-radius: 5px;
+    padding: 16px !important;
+    height: 30px !important;
+    margin-bottom: 32px;
+}
+
+.form-floating input:focus {
+    background: #ECF2FB !important;
+}
+
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label,
+.form-floating>.form-select~label {
+    opacity: 1;
+    opacity: 1 !important;
+    transform: scale(.85) translateY(-1.7rem) translateX(-2.2rem);
+    transform: scale(.85) translateY(-1.7rem) translateX(-1rem) !important;
+}
+
+.form-floating>.form-control {
+    padding: 1rem 2.75rem;
+}
+
+.btn-check:focus+.btn,
+.btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0) !important;
+}
+
+select {
+    height: 63%;
+}
+
+.form-select {
+    height: 34px;
+    font-size: 12px !important;
+    color: #767676 !important;
+}
+
+select:focus {
+    border: solid 1px var(--colmedicaPrimary) !important;
+    box-shadow: none !important;
+}
+
+/********* Modal cerrar sesión *********/
+#swal2-title {
+    font-size: 30px;
+    color: var(--colmedicaPrimary) !important;
+    font-weight: normal;
+}
+
+.swal2-icon {
+    border-color: var(--colmedicaPrimary) !important;
+}
+
+.swal2-info {
+    color: var(--colmedicaPrimary) !important;
+}
+
+.swal2-warning {
+    color: var(--colmedicaPrimary) !important;
+}
+
+.swal2-x-mark-line-right {
+    background-color: #E30613 !important;
+}
+
+.swal2-x-mark-line-left {
+    background-color: #E30613 !important;
+}
+
+.swal2-icon.swal2-error {
+    border-color: #E30613 !important;
+    color: #E30613 !important;
+}
+
+.swal2-close:hover {
+    color: var(--colmedicaTerciario) !important;
+}
+
+.swal2-html-container {
+    margin: 0px !important;
+}
+
+.swal2-icon.swal2-success {
+    border-color: var(--colmedicaPrimary) !important;
+    color: var(--colmedicaPrimary) !important;
+}
+
+.swal2-success-line-tip {
+    background-color: var(--colmedicaPrimary) !important;
+}
+
+.swal2-success-line-long {
+    background-color: var(--colmedicaPrimary) !important;
+}
+
+.swal2-success-ring {
+    border: 0.25em solid var(--colmedicaPrimary) !important;
+}
+
+.swal2-actions {
+    margin: 0px !important;
+}
+
+.table {
+    --bs-table-striped-bg: #F6F8FC !important;
+    --bs-table-hover-bg: #E7F1FF !important;
+}
+
+.table> :not(:first-child) {
+    border-top: 0 !important;
+}
+
+.cardS {
+    color: var(--colmedicaTerciario);
+    background-color: #F6F8FC;
+}
+
+.paddingRcero {
+    padding-right: 0px !important;
+}
+
+.paddingLcero {
+    padding-left: 0px !important;
+}
+
+.cardSnofback {
+    background-color: #F6F8FC;
+}
+
+hr {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-style: solid none;
+    border-width: 1px 0;
+    margin: 18px 0;
+}
+
+.line {
+    border: 1px #DEE2E6 solid;
+    border-style: solid;
+}
+
+table {
+    color: #767676 !important;
+    --bs-table-striped-color: #767676 !important;
+}
+
+
+.fnt-size {
+    font-size: 12px;
+}
+
+.fnt-height-size {
+    height: 34px;
+}
+
+.swal2-popup.swal2-toast .swal2-close {
+    align-self: self-start !important;
+}
+
+.swal2-popup.swal2-toast .swal2-icon {
+    grid-column: 1;
+    grid-row: 1/99;
+    align-self: center;
+    width: 2em;
+    min-width: 2em;
+    height: 2em;
+    margin: -2.5em 0.5em 0 0 !important;
+}
+
+.logoTA {
+    width: 200px;
+    height: 80px;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.none {
+    visibility: hidden;
+}
+
+.padingLabel {
+    margin-left: 15px;
+}
+
+.danger {
+    color: red !important;
+}
+
+.overscrollxTF {
+    overflow: auto;
+    padding-left: 0%;
+}
+
+.active {
+    background-color: #E3F7FF;
+    border-left: 7px var(--colmedicaPrimary) solid;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    height: 45px !important;
+    width: 45px !important;
+}
+
+.form-floatingTA>label {
+    top: -10px !important;
+    font-weight: normal !important;
+    left: 20px;
+    color: var(--colmedicaPrimary) !important;
+    font-size: 12px;
+}
+
+.form-floatingTA input:focus {
+    border: solid 1px var(--colmedicaPrimary) !important;
+    box-shadow: none !important;
+}
+
+.form-floatingTA input {
+    background: var(--colmedicaColorTextoPrimario) !important;
+    border: solid 1px var(--colmedicaTerciario);
+    border-radius: 5px;
+    padding: 16px !important;
+    height: 30px !important;
+    margin-bottom: 32px;
+}
+
+.form-floatingTA>.form-control:focus~label,
+.form-floatingTA>.form-control:not(:placeholder-shown)~label,
+.form-floatingTA>.form-select~label {
+    opacity: 1;
+    opacity: 1 !important;
+    transform: scale(.85) translateY(-1.7rem) translateX(-2.2rem);
+    transform: scale(.85) translateY(-1.7rem) translateX(-1rem) !important;
+}
+
+.form-floatingTA>.form-control {
+    padding: 1rem 2.75rem;
+}
+
+/**
+* Definicion de coleres 
+*/
+:root {
+    --colmedicaPrimary: #0259A1;
+    --colmedicaSecondary: #009FE3;
+    --colmedicaTerciario: #6F6F6F;
+    --colmedicaColorTextoPrimario: #fff;
+    --colmedicaDanger:#DC3545;
 }
